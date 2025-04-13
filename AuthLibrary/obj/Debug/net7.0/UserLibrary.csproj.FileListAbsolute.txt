@@ -1,0 +1,12 @@
+C:\Users\Honor\Desktop\TaskManage\AuthLibrary\bin\Debug\net7.0\UserLibrary.deps.json
+C:\Users\Honor\Desktop\TaskManage\AuthLibrary\bin\Debug\net7.0\UserLibrary.dll
+C:\Users\Honor\Desktop\TaskManage\AuthLibrary\bin\Debug\net7.0\UserLibrary.pdb
+C:\Users\Honor\Desktop\TaskManage\AuthLibrary\obj\Debug\net7.0\UserLibrary.csproj.AssemblyReference.cache
+C:\Users\Honor\Desktop\TaskManage\AuthLibrary\obj\Debug\net7.0\UserLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Honor\Desktop\TaskManage\AuthLibrary\obj\Debug\net7.0\UserLibrary.AssemblyInfoInputs.cache
+C:\Users\Honor\Desktop\TaskManage\AuthLibrary\obj\Debug\net7.0\UserLibrary.AssemblyInfo.cs
+C:\Users\Honor\Desktop\TaskManage\AuthLibrary\obj\Debug\net7.0\UserLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Honor\Desktop\TaskManage\AuthLibrary\obj\Debug\net7.0\UserLibrary.dll
+C:\Users\Honor\Desktop\TaskManage\AuthLibrary\obj\Debug\net7.0\refint\UserLibrary.dll
+C:\Users\Honor\Desktop\TaskManage\AuthLibrary\obj\Debug\net7.0\UserLibrary.pdb
+C:\Users\Honor\Desktop\TaskManage\AuthLibrary\obj\Debug\net7.0\ref\UserLibrary.dll
