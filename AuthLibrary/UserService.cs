@@ -3,7 +3,7 @@ using Npgsql;
 using System;
 using System.Security.Cryptography;
 using System.Text;
-using DataBaseLibrary; 
+using DataBaseLibrary;
 
 
 namespace AuthLibrary
@@ -112,6 +112,12 @@ namespace AuthLibrary
                 Console.WriteLine("Ошибка при авторизации: " + ex.Message);
                 return null;
             }
+        }
+
+        public static List<Dictionary<string, object>> GetSubordinates(int managerId)
+        {
+            // Получаем подчиненных для указанного менеджера
+            return DataBaseService.Select("Users", new List<string> { "id", "login" }, "manager", managerId);
         }
     }
 }

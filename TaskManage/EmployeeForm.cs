@@ -23,7 +23,7 @@ namespace TaskManage
 
         private void ManagerForm_Load(object sender, EventArgs e)
         {
-            lblWelcome.Text = $"Добро пожаловать, {_user.Login} (Подчиненный)";
+            
         }
     }
 }

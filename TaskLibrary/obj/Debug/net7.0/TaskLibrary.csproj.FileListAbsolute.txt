@@ -1,0 +1,15 @@
+C:\Users\Honor\Desktop\TaskManage\TaskLibrary\bin\Debug\net7.0\TaskLibrary.deps.json
+C:\Users\Honor\Desktop\TaskManage\TaskLibrary\bin\Debug\net7.0\TaskLibrary.dll
+C:\Users\Honor\Desktop\TaskManage\TaskLibrary\bin\Debug\net7.0\TaskLibrary.pdb
+C:\Users\Honor\Desktop\TaskManage\TaskLibrary\bin\Debug\net7.0\DataBaseLibrary.dll
+C:\Users\Honor\Desktop\TaskManage\TaskLibrary\bin\Debug\net7.0\DataBaseLibrary.pdb
+C:\Users\Honor\Desktop\TaskManage\TaskLibrary\obj\Debug\net7.0\TaskLibrary.csproj.AssemblyReference.cache
+C:\Users\Honor\Desktop\TaskManage\TaskLibrary\obj\Debug\net7.0\TaskLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Honor\Desktop\TaskManage\TaskLibrary\obj\Debug\net7.0\TaskLibrary.AssemblyInfoInputs.cache
+C:\Users\Honor\Desktop\TaskManage\TaskLibrary\obj\Debug\net7.0\TaskLibrary.AssemblyInfo.cs
+C:\Users\Honor\Desktop\TaskManage\TaskLibrary\obj\Debug\net7.0\TaskLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Honor\Desktop\TaskManage\TaskLibrary\obj\Debug\net7.0\TaskLibrary.csproj.CopyComplete
+C:\Users\Honor\Desktop\TaskManage\TaskLibrary\obj\Debug\net7.0\TaskLibrary.dll
+C:\Users\Honor\Desktop\TaskManage\TaskLibrary\obj\Debug\net7.0\refint\TaskLibrary.dll
+C:\Users\Honor\Desktop\TaskManage\TaskLibrary\obj\Debug\net7.0\TaskLibrary.pdb
+C:\Users\Honor\Desktop\TaskManage\TaskLibrary\obj\Debug\net7.0\ref\TaskLibrary.dll

@@ -15,7 +15,7 @@ namespace TaskManage
     {
         public LoginForm()
         {
-            InitializeComponent();//
+            InitializeComponent();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -45,7 +45,7 @@ namespace TaskManage
                     this.Hide();
                     ManagerForm managerForm = new ManagerForm(user);
                     managerForm.Show(); 
-                    this.Close();
+                    
                 }
                 else
                 {
@@ -53,7 +53,7 @@ namespace TaskManage
                     this.Hide();
                     EmployeeForm employeeForm = new EmployeeForm(user);
                     employeeForm.Show();
-                    this.Close();
+                    
                 }
 
                 // Закрываем текущую форму (форма авторизации)
