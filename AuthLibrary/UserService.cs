@@ -119,5 +119,28 @@ namespace AuthLibrary
             // Получаем подчиненных для указанного менеджера
             return DataBaseService.Select("Users", new List<string> { "id", "login" }, "manager", managerId);
         }
+
+        public static string GetLoginById(int userId)
+        {
+            try
+            {
+                // Выполняем запрос для получения логина пользователя по ID
+                var result = DataBaseService.Select("Users", new List<string> { "login" }, "id", userId);
+
+                if (result != null && result.Count > 0)
+                {
+                    return result[0]["login"].ToString();  // Возвращаем логин
+                }
+                else
+                {
+                    return "Неизвестен";  // Если пользователь не найден
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Ошибка при получении логина: " + ex.Message);
+                return "Ошибка";  // Возвращаем ошибку в случае исключения
+            }
+        }
     }
 }

@@ -1,0 +1,15 @@
+C:\Users\Honor\Desktop\TaskManage\AuthLibrary\bin\Release\net7.0\AuthLibrary.deps.json
+C:\Users\Honor\Desktop\TaskManage\AuthLibrary\bin\Release\net7.0\AuthLibrary.dll
+C:\Users\Honor\Desktop\TaskManage\AuthLibrary\bin\Release\net7.0\AuthLibrary.pdb
+C:\Users\Honor\Desktop\TaskManage\AuthLibrary\bin\Release\net7.0\DataBaseLibrary.dll
+C:\Users\Honor\Desktop\TaskManage\AuthLibrary\bin\Release\net7.0\DataBaseLibrary.pdb
+C:\Users\Honor\Desktop\TaskManage\AuthLibrary\obj\Release\net7.0\AuthLibrary.csproj.AssemblyReference.cache
+C:\Users\Honor\Desktop\TaskManage\AuthLibrary\obj\Release\net7.0\AuthLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Honor\Desktop\TaskManage\AuthLibrary\obj\Release\net7.0\AuthLibrary.AssemblyInfoInputs.cache
+C:\Users\Honor\Desktop\TaskManage\AuthLibrary\obj\Release\net7.0\AuthLibrary.AssemblyInfo.cs
+C:\Users\Honor\Desktop\TaskManage\AuthLibrary\obj\Release\net7.0\AuthLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Honor\Desktop\TaskManage\AuthLibrary\obj\Release\net7.0\AuthLibrary.csproj.CopyComplete
+C:\Users\Honor\Desktop\TaskManage\AuthLibrary\obj\Release\net7.0\AuthLibrary.dll
+C:\Users\Honor\Desktop\TaskManage\AuthLibrary\obj\Release\net7.0\refint\AuthLibrary.dll
+C:\Users\Honor\Desktop\TaskManage\AuthLibrary\obj\Release\net7.0\AuthLibrary.pdb
+C:\Users\Honor\Desktop\TaskManage\AuthLibrary\obj\Release\net7.0\ref\AuthLibrary.dll

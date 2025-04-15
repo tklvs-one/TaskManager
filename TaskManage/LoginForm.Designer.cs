@@ -28,60 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.txtLogin = new System.Windows.Forms.TextBox();
-            this.btnLogin = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.txtLogin = new MaterialSkin.Controls.MaterialMaskedTextBox();
+            this.txtPassword = new MaterialSkin.Controls.MaterialMaskedTextBox();
+            this.btnLogin = new MaterialSkin.Controls.MaterialButton();
             this.SuspendLayout();
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(87, 174);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 20);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Пароль";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(87, 107);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 20);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Имя пользователя";
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Location = new System.Drawing.Point(87, 197);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(204, 27);
-            this.txtPassword.TabIndex = 8;
-            // 
-            // txtLogin
-            // 
-            this.txtLogin.Location = new System.Drawing.Point(87, 130);
-            this.txtLogin.Name = "txtLogin";
-            this.txtLogin.Size = new System.Drawing.Size(204, 27);
-            this.txtLogin.TabIndex = 7;
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.Location = new System.Drawing.Point(87, 330);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(204, 29);
-            this.btnLogin.TabIndex = 11;
-            this.btnLogin.Text = "Войти";
-            this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(67, 362);
+            this.linkLabel1.Location = new System.Drawing.Point(67, 386);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(251, 20);
             this.linkLabel1.TabIndex = 12;
@@ -89,17 +45,120 @@
             this.linkLabel1.Text = "Нет аккаунта? Зарегистрироваться";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
+            // txtLogin
+            // 
+            this.txtLogin.AllowPromptAsInput = true;
+            this.txtLogin.AnimateReadOnly = false;
+            this.txtLogin.AsciiOnly = false;
+            this.txtLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtLogin.BeepOnError = false;
+            this.txtLogin.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.txtLogin.Depth = 0;
+            this.txtLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtLogin.HidePromptOnLeave = false;
+            this.txtLogin.HideSelection = true;
+            this.txtLogin.Hint = "Имя пользователя";
+            this.txtLogin.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
+            this.txtLogin.LeadingIcon = null;
+            this.txtLogin.Location = new System.Drawing.Point(36, 132);
+            this.txtLogin.Mask = "";
+            this.txtLogin.MaxLength = 32767;
+            this.txtLogin.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtLogin.Name = "txtLogin";
+            this.txtLogin.PasswordChar = '\0';
+            this.txtLogin.PrefixSuffixText = null;
+            this.txtLogin.PromptChar = '_';
+            this.txtLogin.ReadOnly = false;
+            this.txtLogin.RejectInputOnFirstFailure = false;
+            this.txtLogin.ResetOnPrompt = true;
+            this.txtLogin.ResetOnSpace = true;
+            this.txtLogin.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtLogin.SelectedText = "";
+            this.txtLogin.SelectionLength = 0;
+            this.txtLogin.SelectionStart = 0;
+            this.txtLogin.ShortcutsEnabled = true;
+            this.txtLogin.Size = new System.Drawing.Size(312, 48);
+            this.txtLogin.SkipLiterals = true;
+            this.txtLogin.TabIndex = 13;
+            this.txtLogin.TabStop = false;
+            this.txtLogin.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtLogin.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.txtLogin.TrailingIcon = null;
+            this.txtLogin.UseSystemPasswordChar = false;
+            this.txtLogin.ValidatingType = null;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.AllowPromptAsInput = true;
+            this.txtPassword.AnimateReadOnly = false;
+            this.txtPassword.AsciiOnly = false;
+            this.txtPassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtPassword.BeepOnError = false;
+            this.txtPassword.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.txtPassword.Depth = 0;
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPassword.HidePromptOnLeave = false;
+            this.txtPassword.HideSelection = true;
+            this.txtPassword.Hint = "Пароль";
+            this.txtPassword.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
+            this.txtPassword.LeadingIcon = null;
+            this.txtPassword.Location = new System.Drawing.Point(36, 216);
+            this.txtPassword.Mask = "";
+            this.txtPassword.MaxLength = 32767;
+            this.txtPassword.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.PrefixSuffixText = null;
+            this.txtPassword.PromptChar = '_';
+            this.txtPassword.ReadOnly = false;
+            this.txtPassword.RejectInputOnFirstFailure = false;
+            this.txtPassword.ResetOnPrompt = true;
+            this.txtPassword.ResetOnSpace = true;
+            this.txtPassword.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtPassword.SelectedText = "";
+            this.txtPassword.SelectionLength = 0;
+            this.txtPassword.SelectionStart = 0;
+            this.txtPassword.ShortcutsEnabled = true;
+            this.txtPassword.Size = new System.Drawing.Size(312, 48);
+            this.txtPassword.SkipLiterals = true;
+            this.txtPassword.TabIndex = 14;
+            this.txtPassword.TabStop = false;
+            this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtPassword.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.txtPassword.TrailingIcon = null;
+            this.txtPassword.UseSystemPasswordChar = false;
+            this.txtPassword.ValidatingType = null;
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.AutoSize = false;
+            this.btnLogin.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnLogin.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnLogin.Depth = 0;
+            this.btnLogin.HighEmphasis = true;
+            this.btnLogin.Icon = null;
+            this.btnLogin.Location = new System.Drawing.Point(90, 335);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnLogin.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnLogin.Size = new System.Drawing.Size(198, 45);
+            this.btnLogin.TabIndex = 15;
+            this.btnLogin.Text = "Войти";
+            this.btnLogin.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnLogin.UseAccentColor = false;
+            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click_1);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(382, 503);
-            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtLogin);
+            this.Controls.Add(this.linkLabel1);
             this.Name = "LoginForm";
             this.Text = "LoginForm";
             this.ResumeLayout(false);
@@ -108,12 +167,9 @@
         }
 
         #endregion
-
-        private Label label2;
-        private Label label1;
-        private TextBox txtPassword;
-        private TextBox txtLogin;
-        private Button btnLogin;
         private LinkLabel linkLabel1;
+        private MaterialSkin.Controls.MaterialMaskedTextBox txtLogin;
+        private MaterialSkin.Controls.MaterialMaskedTextBox txtPassword;
+        private MaterialSkin.Controls.MaterialButton btnLogin;
     }
 }
