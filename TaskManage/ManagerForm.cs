@@ -162,7 +162,7 @@ namespace TaskManage
                         Text = $"Приоритет: {task["priority"]}",
                         AutoSize = true,
                         Font = new Font("Arial", 10, FontStyle.Regular),
-                        Dock = DockStyle.Top,
+                        Dock = DockStyle.Bottom,
                         Padding = new Padding(0, 0, 0, 10)  // Отступ снизу
                     };
 
@@ -172,7 +172,7 @@ namespace TaskManage
                         Text = $"Статус: {task["status"]}",
                         AutoSize = true,
                         Font = new Font("Arial", 10, FontStyle.Regular),
-                        Dock = DockStyle.Top
+                        Dock = DockStyle.Bottom
                     };
 
                     // Добавляем все элементы в контейнер задачи
@@ -185,12 +185,13 @@ namespace TaskManage
                     // Кнопка для удаления задачи
                     var deleteButton = new Button
                     {
-                        Text = "Удалить",
-                        Size = new Size(100, 30),
-                        BackColor = Color.Red,
-                        ForeColor = Color.White,
+                        Size = new Size(card.Width - 20, 40),  // Ширина на всю карточку, высота 40
+                        ImageList = imageList1,  // Устанавливаем ImageList для кнопки
+                        ImageIndex = 3,  // Индекс крестика в ImageList
+                        FlatStyle = FlatStyle.Flat,
+                        FlatAppearance = { BorderSize = 0 },
                         Dock = DockStyle.Bottom,  // Кнопка будет располагаться внизу карточки
-                        FlatStyle = FlatStyle.Flat
+                        Text = "",  // Убираем текст, оставляем только изображение
                     };
 
                     // Обработчик нажатия на кнопку удаления
@@ -213,7 +214,7 @@ namespace TaskManage
                     };
 
                     // Добавляем кнопку удаления в контейнер задачи
-                    taskInfo.Controls.Add(deleteButton);
+                    card.Controls.Add(deleteButton);
 
                     // Добавляем контейнер с текстом в карточку
                     card.Controls.Add(taskInfo);
