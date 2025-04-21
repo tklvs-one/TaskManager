@@ -1,4 +1,9 @@
-﻿using DataBaseLibrary; 
+﻿using DataBaseLibrary;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using DataBaseLibrary; // Для работы с БД
+
 
 namespace TaskLibrary
 {
@@ -29,11 +34,6 @@ namespace TaskLibrary
                 Console.WriteLine("Ошибка при создании задачи: " + ex.Message);
                 return false;
             }
-        }
-        public static List<Dictionary<string, object>> GetTasksByCreator(int creatorId)
-        {
-            // Получаем все задачи, созданные этим менеджером
-            return DataBaseService.Select("tasks", new List<string> { "id", "title", "description", "priority", "status", "assignee_id" }, "creator_id", creatorId);
         }
 
         public static bool DeleteTask(int taskId)

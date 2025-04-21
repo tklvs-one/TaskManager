@@ -30,7 +30,9 @@ namespace TaskManage
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
             LoadSubordinates();
             LoadManagerTasks();
-
+            cmbAssigneS.SelectedIndex = -1;
+            cmbPriorityS.SelectedIndex = -1;
+            cmbStatus.SelectedIndex = -1;
         }
 
 
@@ -47,6 +49,7 @@ namespace TaskManage
                 foreach (var row in result)
                 {
                     // Добавляем подчиненного в ComboBox
+
                     cmbAssignee.Items.Add(new { Id = row["id"], Login = row["login"] });
                 }
 
@@ -64,6 +67,7 @@ namespace TaskManage
         private void materialButton1_Click(object sender, EventArgs e)
         {
             string title = txtTitle.Text;
+
             string description = txtDescription.Text;
 
             var selectedAssignee = cmbAssignee.SelectedItem as dynamic;
@@ -94,10 +98,11 @@ namespace TaskManage
             }
         }
 
-        private void LoadManagerTasks()
+        private void LoadManagerTasks(string priorityCondition = null, string statusCondition = null)
         {
+
             // Получаем все задачи, выданные текущим менеджером
-            var tasks = TaskService.GetTasksByCreator(_user.Id);
+            var tasks = DataBaseService.GetFilteredTasksByCreator(_user.Id, priorityCondition, statusCondition);
 
             if (tasks != null && tasks.Count > 0)
             {
@@ -231,6 +236,24 @@ namespace TaskManage
 
         private void materialButton2_Click(object sender, EventArgs e)
         {
+            LoadManagerTasks();
+        }
+
+        private void ApplyFilters_Click(object sender, EventArgs e)
+        {
+            string priorityCondition = cmbPriorityS.SelectedItem?.ToString();
+
+            string statusCondition = cmbStatus.SelectedItem?.ToString();
+
+
+            LoadManagerTasks(priorityCondition, statusCondition);
+        }
+
+        private void DisableFilters_Click(object sender, EventArgs e)
+        {
+
+            cmbPriorityS.SelectedIndex = -1;
+            cmbStatus.SelectedIndex = -1;
             LoadManagerTasks();
         }
     }

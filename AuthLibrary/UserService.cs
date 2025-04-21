@@ -41,7 +41,7 @@ namespace AuthLibrary
                     { "manager", managerId.HasValue ? (object)managerId.Value : DBNull.Value }
                 };
 
-                // Используем метод Add из UserDatabaseService для добавления нового пользователя
+                
                 return DataBaseService.Add("Users", columnValues);
             }
             catch (Exception ex)

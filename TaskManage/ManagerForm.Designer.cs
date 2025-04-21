@@ -38,10 +38,14 @@
             this.txtTitle = new MaterialSkin.Controls.MaterialMaskedTextBox();
             this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
             this.ViewTab = new System.Windows.Forms.TabPage();
+            this.DisableFilters = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.ApplyFilters = new System.Windows.Forms.Button();
+            this.cmbPriorityS = new MaterialSkin.Controls.MaterialComboBox();
+            this.cmbStatus = new MaterialSkin.Controls.MaterialComboBox();
+            this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.SettingsTab = new System.Windows.Forms.TabPage();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
             this.materialTabControl1.SuspendLayout();
             this.CreateTab.SuspendLayout();
             this.ViewTab.SuspendLayout();
@@ -218,6 +222,10 @@
             // 
             // ViewTab
             // 
+            this.ViewTab.Controls.Add(this.DisableFilters);
+            this.ViewTab.Controls.Add(this.ApplyFilters);
+            this.ViewTab.Controls.Add(this.cmbPriorityS);
+            this.ViewTab.Controls.Add(this.cmbStatus);
             this.ViewTab.Controls.Add(this.materialButton2);
             this.ViewTab.Controls.Add(this.flowLayoutPanel1);
             this.ViewTab.ImageKey = "icons8-задания-32.png";
@@ -229,14 +237,126 @@
             this.ViewTab.Text = "Задачи";
             this.ViewTab.UseVisualStyleBackColor = true;
             // 
+            // DisableFilters
+            // 
+            this.DisableFilters.FlatAppearance.BorderSize = 0;
+            this.DisableFilters.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DisableFilters.ImageIndex = 3;
+            this.DisableFilters.ImageList = this.imageList1;
+            this.DisableFilters.Location = new System.Drawing.Point(743, 11);
+            this.DisableFilters.Name = "DisableFilters";
+            this.DisableFilters.Size = new System.Drawing.Size(32, 32);
+            this.DisableFilters.TabIndex = 5;
+            this.DisableFilters.UseVisualStyleBackColor = true;
+            this.DisableFilters.Click += new System.EventHandler(this.DisableFilters_Click);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.White;
+            this.imageList1.Images.SetKeyName(0, "icons8-добавить-32.png");
+            this.imageList1.Images.SetKeyName(1, "icons8-задания-32.png");
+            this.imageList1.Images.SetKeyName(2, "icons8-настройки-32.png");
+            this.imageList1.Images.SetKeyName(3, "");
+            this.imageList1.Images.SetKeyName(4, "icons8-поиск-32.png");
+            // 
+            // ApplyFilters
+            // 
+            this.ApplyFilters.FlatAppearance.BorderSize = 0;
+            this.ApplyFilters.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ApplyFilters.ImageIndex = 4;
+            this.ApplyFilters.ImageList = this.imageList1;
+            this.ApplyFilters.Location = new System.Drawing.Point(692, 11);
+            this.ApplyFilters.Name = "ApplyFilters";
+            this.ApplyFilters.Size = new System.Drawing.Size(32, 32);
+            this.ApplyFilters.TabIndex = 4;
+            this.ApplyFilters.UseVisualStyleBackColor = true;
+            this.ApplyFilters.Click += new System.EventHandler(this.ApplyFilters_Click);
+            // 
+            // cmbPriorityS
+            // 
+            this.cmbPriorityS.AutoResize = false;
+            this.cmbPriorityS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cmbPriorityS.Depth = 0;
+            this.cmbPriorityS.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cmbPriorityS.DropDownHeight = 174;
+            this.cmbPriorityS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPriorityS.DropDownWidth = 121;
+            this.cmbPriorityS.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cmbPriorityS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmbPriorityS.FormattingEnabled = true;
+            this.cmbPriorityS.Hint = "Приоритет работы";
+            this.cmbPriorityS.IntegralHeight = false;
+            this.cmbPriorityS.ItemHeight = 43;
+            this.cmbPriorityS.Items.AddRange(new object[] {
+            "Easy",
+            "Medium",
+            "Hard"});
+            this.cmbPriorityS.Location = new System.Drawing.Point(213, 6);
+            this.cmbPriorityS.MaxDropDownItems = 4;
+            this.cmbPriorityS.MouseState = MaterialSkin.MouseState.OUT;
+            this.cmbPriorityS.Name = "cmbPriorityS";
+            this.cmbPriorityS.Size = new System.Drawing.Size(203, 49);
+            this.cmbPriorityS.StartIndex = 0;
+            this.cmbPriorityS.TabIndex = 3;
+            // 
+            // cmbStatus
+            // 
+            this.cmbStatus.AutoResize = false;
+            this.cmbStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cmbStatus.Depth = 0;
+            this.cmbStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cmbStatus.DropDownHeight = 174;
+            this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbStatus.DropDownWidth = 121;
+            this.cmbStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cmbStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.Hint = "Статус работы";
+            this.cmbStatus.IntegralHeight = false;
+            this.cmbStatus.ItemHeight = 43;
+            this.cmbStatus.Items.AddRange(new object[] {
+            "В работе",
+            "Выполнена",
+            "Провалена",
+            "Отказано"});
+            this.cmbStatus.Location = new System.Drawing.Point(4, 6);
+            this.cmbStatus.MaxDropDownItems = 4;
+            this.cmbStatus.MouseState = MaterialSkin.MouseState.OUT;
+            this.cmbStatus.Name = "cmbStatus";
+            this.cmbStatus.Size = new System.Drawing.Size(199, 49);
+            this.cmbStatus.StartIndex = 0;
+            this.cmbStatus.TabIndex = 2;
+            // 
+            // materialButton2
+            // 
+            this.materialButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton2.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton2.Depth = 0;
+            this.materialButton2.HighEmphasis = true;
+            this.materialButton2.Icon = null;
+            this.materialButton2.Location = new System.Drawing.Point(309, 435);
+            this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton2.Name = "materialButton2";
+            this.materialButton2.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton2.Size = new System.Drawing.Size(157, 36);
+            this.materialButton2.TabIndex = 1;
+            this.materialButton2.Text = "Загрузить новое";
+            this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton2.UseAccentColor = false;
+            this.materialButton2.UseVisualStyleBackColor = true;
+            this.materialButton2.Click += new System.EventHandler(this.materialButton2_Click);
+            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flowLayoutPanel1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 58);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(835, 417);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(835, 362);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // SettingsTab
@@ -248,35 +368,6 @@
             this.SettingsTab.TabIndex = 2;
             this.SettingsTab.Text = "Настройки";
             this.SettingsTab.UseVisualStyleBackColor = true;
-            // 
-            // imageList1
-            // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.White;
-            this.imageList1.Images.SetKeyName(0, "icons8-добавить-32.png");
-            this.imageList1.Images.SetKeyName(1, "icons8-задания-32.png");
-            this.imageList1.Images.SetKeyName(2, "icons8-настройки-32.png");
-            // 
-            // materialButton2
-            // 
-            this.materialButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton2.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton2.Depth = 0;
-            this.materialButton2.HighEmphasis = true;
-            this.materialButton2.Icon = null;
-            this.materialButton2.Location = new System.Drawing.Point(333, 424);
-            this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton2.Name = "materialButton2";
-            this.materialButton2.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton2.Size = new System.Drawing.Size(158, 36);
-            this.materialButton2.TabIndex = 1;
-            this.materialButton2.Text = "Загрузить новое";
-            this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton2.UseAccentColor = false;
-            this.materialButton2.UseVisualStyleBackColor = true;
-            this.materialButton2.Click += new System.EventHandler(this.materialButton2_Click);
             // 
             // ManagerForm
             // 
@@ -314,5 +405,9 @@
         private MaterialSkin.Controls.MaterialComboBox cmbPriority;
         private FlowLayoutPanel flowLayoutPanel1;
         private MaterialSkin.Controls.MaterialButton materialButton2;
+        private MaterialSkin.Controls.MaterialComboBox cmbPriorityS;
+        private MaterialSkin.Controls.MaterialComboBox cmbStatus;
+        private Button ApplyFilters;
+        private Button DisableFilters;
     }
 }

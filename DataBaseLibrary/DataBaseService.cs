@@ -94,7 +94,7 @@ namespace DataBaseLibrary
                     return false;
                 }
 
-                // Формируем строки для SET и WHERE частей SQL запроса
+
                 string setClause = string.Join(", ", columnValues.Keys.Select(key => $"{key} = @{key}"));
                 string query = $"UPDATE {tableName} SET {setClause} WHERE {whereColumn} = @{whereColumn}";
 
@@ -192,6 +192,69 @@ namespace DataBaseLibrary
             catch (Exception ex)
             {
                 Console.WriteLine("Ошибка при выборке данных: " + ex.Message);
+                return null;
+            }
+        }
+
+        public static List<Dictionary<string, object>> GetFilteredTasksByCreator(int creatorId, string priorityCondition, string statusCondition)
+        {
+            try
+            {
+                // Начальный SQL запрос
+                string query = "SELECT * FROM tasks WHERE creator_id = @creatorId";
+
+                // Добавляем условия фильтрации, если они переданы
+                if (!string.IsNullOrEmpty(priorityCondition))
+                {
+                    query += " AND priority = @priority";
+                }
+
+                if (!string.IsNullOrEmpty(statusCondition))
+                {
+                    query += " AND status = @status";
+                }
+
+                using (var conn = new NpgsqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    using (var cmd = new NpgsqlCommand(query, conn))
+                    {
+                        // Добавляем параметры для фильтров
+                        cmd.Parameters.AddWithValue("creatorId", creatorId);
+
+                        if (!string.IsNullOrEmpty(priorityCondition))
+                        {
+                            cmd.Parameters.AddWithValue("priority", priorityCondition);
+                        }
+
+                        if (!string.IsNullOrEmpty(statusCondition))
+                        {
+                            cmd.Parameters.AddWithValue("status", statusCondition);
+                        }
+
+                        // Выполняем запрос и получаем результаты
+                        var result = new List<Dictionary<string, object>>();
+                        using (var reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                var row = new Dictionary<string, object>();
+                                for (int i = 0; i < reader.FieldCount; i++)
+                                {
+                                    row[reader.GetName(i)] = reader.GetValue(i);
+                                }
+                                result.Add(row);
+                            }
+                        }
+
+                        return result;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Ошибка при фильтрации задач: " + ex.Message);
                 return null;
             }
         }
