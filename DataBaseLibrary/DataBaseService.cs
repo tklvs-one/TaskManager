@@ -196,7 +196,7 @@ namespace DataBaseLibrary
             }
         }
 
-        public static List<Dictionary<string, object>> GetFilteredTasksByCreator(int creatorId, string priorityCondition, string statusCondition)
+        public static List<Dictionary<string, object>> GetFilteredTasksByCreator(int creatorId, string priorityCondition, string statusCondition, int? assigneeId = null)
         {
             try
             {
@@ -212,6 +212,12 @@ namespace DataBaseLibrary
                 if (!string.IsNullOrEmpty(statusCondition))
                 {
                     query += " AND status = @status";
+                }
+
+                // Фильтрация по исполнителю, если передан ID исполнителя
+                if (assigneeId.HasValue)
+                {
+                    query += " AND assignee_id = @assigneeId";
                 }
 
                 using (var conn = new NpgsqlConnection(connectionString))
@@ -231,6 +237,11 @@ namespace DataBaseLibrary
                         if (!string.IsNullOrEmpty(statusCondition))
                         {
                             cmd.Parameters.AddWithValue("status", statusCondition);
+                        }
+
+                        if (assigneeId.HasValue)
+                        {
+                            cmd.Parameters.AddWithValue("assigneeId", assigneeId.Value);
                         }
 
                         // Выполняем запрос и получаем результаты
@@ -258,5 +269,6 @@ namespace DataBaseLibrary
                 return null;
             }
         }
+
     }
 }

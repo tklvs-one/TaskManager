@@ -38,6 +38,7 @@
             this.txtTitle = new MaterialSkin.Controls.MaterialMaskedTextBox();
             this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
             this.ViewTab = new System.Windows.Forms.TabPage();
+            this.cmbAssigneS = new MaterialSkin.Controls.MaterialComboBox();
             this.DisableFilters = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.ApplyFilters = new System.Windows.Forms.Button();
@@ -222,6 +223,7 @@
             // 
             // ViewTab
             // 
+            this.ViewTab.Controls.Add(this.cmbAssigneS);
             this.ViewTab.Controls.Add(this.DisableFilters);
             this.ViewTab.Controls.Add(this.ApplyFilters);
             this.ViewTab.Controls.Add(this.cmbPriorityS);
@@ -236,6 +238,28 @@
             this.ViewTab.TabIndex = 1;
             this.ViewTab.Text = "Задачи";
             this.ViewTab.UseVisualStyleBackColor = true;
+            // 
+            // cmbAssigneS
+            // 
+            this.cmbAssigneS.AutoResize = false;
+            this.cmbAssigneS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cmbAssigneS.Depth = 0;
+            this.cmbAssigneS.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cmbAssigneS.DropDownHeight = 174;
+            this.cmbAssigneS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbAssigneS.DropDownWidth = 121;
+            this.cmbAssigneS.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cmbAssigneS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmbAssigneS.FormattingEnabled = true;
+            this.cmbAssigneS.IntegralHeight = false;
+            this.cmbAssigneS.ItemHeight = 43;
+            this.cmbAssigneS.Location = new System.Drawing.Point(422, 6);
+            this.cmbAssigneS.MaxDropDownItems = 4;
+            this.cmbAssigneS.MouseState = MaterialSkin.MouseState.OUT;
+            this.cmbAssigneS.Name = "cmbAssigneS";
+            this.cmbAssigneS.Size = new System.Drawing.Size(207, 49);
+            this.cmbAssigneS.StartIndex = 0;
+            this.cmbAssigneS.TabIndex = 6;
             // 
             // DisableFilters
             // 
@@ -409,5 +433,6 @@
         private MaterialSkin.Controls.MaterialComboBox cmbStatus;
         private Button ApplyFilters;
         private Button DisableFilters;
+        private MaterialSkin.Controls.MaterialComboBox cmbAssigneS;
     }
 }

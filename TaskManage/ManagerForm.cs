@@ -30,7 +30,6 @@ namespace TaskManage
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
             LoadSubordinates();
             LoadManagerTasks();
-            cmbAssigneS.SelectedIndex = -1;
             cmbPriorityS.SelectedIndex = -1;
             cmbStatus.SelectedIndex = -1;
         }
@@ -46,14 +45,17 @@ namespace TaskManage
             if (result != null && result.Count > 0)
             {
                 cmbAssignee.Items.Clear();
+                cmbAssigneS.Items.Clear();
                 foreach (var row in result)
                 {
                     // Добавляем подчиненного в ComboBox
-
+                    cmbAssigneS.Items.Add(new { Id = row["id"], Login = row["login"] });
                     cmbAssignee.Items.Add(new { Id = row["id"], Login = row["login"] });
                 }
 
                 cmbAssignee.DisplayMember = "Login";
+                cmbAssignee.ValueMember = "Id";
+                cmbAssigneS.DisplayMember= "Login";
                 cmbAssignee.ValueMember = "Id";
             }
             else
@@ -98,11 +100,11 @@ namespace TaskManage
             }
         }
 
-        private void LoadManagerTasks(string priorityCondition = null, string statusCondition = null)
+        private void LoadManagerTasks(string priorityCondition = null, string statusCondition = null, int? assigneeSId = null)
         {
 
             // Получаем все задачи, выданные текущим менеджером
-            var tasks = DataBaseService.GetFilteredTasksByCreator(_user.Id, priorityCondition, statusCondition);
+            var tasks = DataBaseService.GetFilteredTasksByCreator(_user.Id, priorityCondition, statusCondition, assigneeSId);
 
             if (tasks != null && tasks.Count > 0)
             {
@@ -245,8 +247,10 @@ namespace TaskManage
 
             string statusCondition = cmbStatus.SelectedItem?.ToString();
 
+            var assigneCondition = cmbAssigneS.SelectedItem as dynamic;
+            int? idAssignee = assigneCondition?.Id;
 
-            LoadManagerTasks(priorityCondition, statusCondition);
+            LoadManagerTasks(priorityCondition, statusCondition, idAssignee);
         }
 
         private void DisableFilters_Click(object sender, EventArgs e)
@@ -254,6 +258,11 @@ namespace TaskManage
 
             cmbPriorityS.SelectedIndex = -1;
             cmbStatus.SelectedIndex = -1;
+            cmbAssigneS.SelectedIndex = -1;
+            cmbPriorityS.Refresh();
+            cmbStatus.Refresh();
+            cmbAssigneS.Refresh();
+
             LoadManagerTasks();
         }
     }
