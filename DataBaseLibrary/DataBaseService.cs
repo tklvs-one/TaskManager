@@ -270,5 +270,50 @@ namespace DataBaseLibrary
             }
         }
 
+        public static List<Dictionary<string, object>> GetTasksByAssignee(int assigneeId, params string[] statuses)
+        {
+            try
+            {
+                string query = "SELECT * FROM tasks WHERE assignee_id = @assigneeId";
+
+                if (statuses != null && statuses.Length > 0)
+                {
+                    string formattedStatuses = string.Join("','", statuses);
+                    query += $" AND status IN ('{formattedStatuses}')";
+                }
+
+                using (var conn = new NpgsqlConnection(connectionString))
+                {
+                    conn.Open();
+                    using (var cmd = new NpgsqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("assigneeId", assigneeId);
+
+                        var result = new List<Dictionary<string, object>>();
+                        using (var reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                var row = new Dictionary<string, object>();
+                                for (int i = 0; i < reader.FieldCount; i++)
+                                {
+                                    row[reader.GetName(i)] = reader.GetValue(i);
+                                }
+                                result.Add(row);
+                            }
+                        }
+
+                        return result;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Ошибка при получении задач по исполнителю: " + ex.Message);
+                return new List<Dictionary<string, object>>();
+            }
+        }
+
+
     }
 }

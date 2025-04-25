@@ -50,5 +50,24 @@ namespace TaskLibrary
             }
         }
 
+        public static bool ChangeTaskStatus(int taskId, string newStatus)
+        {
+            try
+            {
+                var columnValues = new Dictionary<string, object>
+                {
+                    { "status", newStatus }
+                };
+
+                return DataBaseService.Update("tasks", columnValues, "id", taskId);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Ошибка при изменении статуса задачи: " + ex.Message);
+                return false;
+            }
+        }
+
+
     }
 }

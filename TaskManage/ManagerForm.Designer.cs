@@ -342,8 +342,8 @@
             this.cmbStatus.ItemHeight = 43;
             this.cmbStatus.Items.AddRange(new object[] {
             "В работе",
-            "Выполнена",
-            "Провалена",
+            "Выполнено",
+            "Провалено",
             "Отказано"});
             this.cmbStatus.Location = new System.Drawing.Point(4, 6);
             this.cmbStatus.MaxDropDownItems = 4;
