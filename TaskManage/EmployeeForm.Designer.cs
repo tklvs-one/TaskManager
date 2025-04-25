@@ -32,9 +32,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeForm));
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPageTasks = new System.Windows.Forms.TabPage();
+            this.flowLayoutPanelInProgress = new System.Windows.Forms.FlowLayoutPanel();
             this.tabPageCompletedTasks = new System.Windows.Forms.TabPage();
+            this.flowLayoutPanelCompleted = new System.Windows.Forms.FlowLayoutPanel();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
             this.materialTabControl1.SuspendLayout();
+            this.tabPageTasks.SuspendLayout();
+            this.tabPageCompletedTasks.SuspendLayout();
             this.SuspendLayout();
             // 
             // materialTabControl1
@@ -55,23 +60,46 @@
             // tabPageTasks
             // 
             this.tabPageTasks.BackColor = System.Drawing.Color.White;
+            this.tabPageTasks.Controls.Add(this.materialButton1);
+            this.tabPageTasks.Controls.Add(this.flowLayoutPanelInProgress);
             this.tabPageTasks.ImageIndex = 0;
             this.tabPageTasks.Location = new System.Drawing.Point(4, 39);
             this.tabPageTasks.Name = "tabPageTasks";
             this.tabPageTasks.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageTasks.Size = new System.Drawing.Size(841, 466);
             this.tabPageTasks.TabIndex = 0;
-            this.tabPageTasks.Text = "tabPage1";
+            this.tabPageTasks.Text = "Задачи";
+            // 
+            // flowLayoutPanelInProgress
+            // 
+            this.flowLayoutPanelInProgress.AutoScroll = true;
+            this.flowLayoutPanelInProgress.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanelInProgress.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanelInProgress.Name = "flowLayoutPanelInProgress";
+            this.flowLayoutPanelInProgress.Size = new System.Drawing.Size(838, 406);
+            this.flowLayoutPanelInProgress.TabIndex = 0;
+            this.flowLayoutPanelInProgress.WrapContents = false;
             // 
             // tabPageCompletedTasks
             // 
+            this.tabPageCompletedTasks.Controls.Add(this.flowLayoutPanelCompleted);
             this.tabPageCompletedTasks.Location = new System.Drawing.Point(4, 39);
             this.tabPageCompletedTasks.Name = "tabPageCompletedTasks";
             this.tabPageCompletedTasks.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageCompletedTasks.Size = new System.Drawing.Size(786, 340);
+            this.tabPageCompletedTasks.Size = new System.Drawing.Size(841, 466);
             this.tabPageCompletedTasks.TabIndex = 1;
-            this.tabPageCompletedTasks.Text = "tabPage2";
+            this.tabPageCompletedTasks.Text = "Выполнено";
             this.tabPageCompletedTasks.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanelCompleted
+            // 
+            this.flowLayoutPanelCompleted.AutoScroll = true;
+            this.flowLayoutPanelCompleted.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanelCompleted.Location = new System.Drawing.Point(-1, 59);
+            this.flowLayoutPanelCompleted.Name = "flowLayoutPanelCompleted";
+            this.flowLayoutPanelCompleted.Size = new System.Drawing.Size(842, 358);
+            this.flowLayoutPanelCompleted.TabIndex = 0;
+            this.flowLayoutPanelCompleted.WrapContents = false;
             // 
             // imageList1
             // 
@@ -79,6 +107,26 @@
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "icons8-задания-32.png");
+            // 
+            // materialButton1
+            // 
+            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton1.Depth = 0;
+            this.materialButton1.HighEmphasis = true;
+            this.materialButton1.Icon = null;
+            this.materialButton1.Location = new System.Drawing.Point(351, 415);
+            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton1.Name = "materialButton1";
+            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton1.Size = new System.Drawing.Size(157, 36);
+            this.materialButton1.TabIndex = 1;
+            this.materialButton1.Text = "Загрузить новое";
+            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton1.UseAccentColor = false;
+            this.materialButton1.UseVisualStyleBackColor = true;
+            this.materialButton1.Click += new System.EventHandler(this.materialButton1_Click);
             // 
             // EmployeeForm
             // 
@@ -91,8 +139,11 @@
             this.DrawerTabControl = this.materialTabControl1;
             this.Name = "EmployeeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Employee";
+            this.Text = "Форма работника";
             this.materialTabControl1.ResumeLayout(false);
+            this.tabPageTasks.ResumeLayout(false);
+            this.tabPageTasks.PerformLayout();
+            this.tabPageCompletedTasks.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -103,5 +154,8 @@
         private TabPage tabPageTasks;
         private TabPage tabPageCompletedTasks;
         private ImageList imageList1;
+        private FlowLayoutPanel flowLayoutPanelInProgress;
+        private FlowLayoutPanel flowLayoutPanelCompleted;
+        private MaterialSkin.Controls.MaterialButton materialButton1;
     }
 }

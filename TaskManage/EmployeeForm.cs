@@ -36,75 +36,76 @@ namespace TaskManage
         private void LoadTasksInProgress()
         {
             var tasks = DataBaseService.GetTasksByAssignee(_user.Id, "В работе");
-            DisplayTasks(tasks, tabPageTasks, true);
+            DisplayTasks(tasks, flowLayoutPanelInProgress, true);
         }
 
         private void LoadCompletedTasks()
         {
             var tasks = DataBaseService.GetTasksByAssignee(_user.Id, "Выполнено", "Провалено", "Отказано");
-            DisplayTasks(tasks, tabPageCompletedTasks, false);
+            DisplayTasks(tasks, flowLayoutPanelCompleted, false);
         }
 
-        private void DisplayTasks(List<Dictionary<string, object>> tasks, TabPage tabPage, bool allowStatusChange)
+        private void DisplayTasks(List<Dictionary<string, object>> tasks, FlowLayoutPanel panel, bool allowStatusChange)
         {
-            tabPage.Controls.Clear();
-            var panel = new FlowLayoutPanel
-            {
-                Dock = DockStyle.Fill,
-                AutoScroll = true,
-                FlowDirection = FlowDirection.TopDown,
-                WrapContents = false
-            };
-            tabPage.Controls.Add(panel);
+            panel.Controls.Clear();
 
             foreach (var task in tasks)
             {
                 var card = new MaterialCard
                 {
-                    Width = panel.Width - 30,
+                    Width = panel.Width - 75,
                     Height = 300,
                     Padding = new Padding(10),
                     BackColor = Color.White,
                     Margin = new Padding(10)
                 };
 
-                var container = new FlowLayoutPanel
+                var taskInfo = new FlowLayoutPanel
                 {
                     Dock = DockStyle.Fill,
                     FlowDirection = FlowDirection.TopDown,
-                    WrapContents = false,
-                    AutoScroll = true
+                    Padding = new Padding(5),
+                    WrapContents = false
                 };
 
-                var title = new Label
+                var titleLabel = new Label
                 {
                     Text = $"{task["title"]}",
-                    Font = new Font("Segoe UI", 14, FontStyle.Bold),
-                    AutoSize = true
+                    Font = new Font("Arial", 18, FontStyle.Bold),
+                    AutoSize = true,
+                    Dock = DockStyle.Top,
+                    Padding = new Padding(0, 0, 0, 10)
                 };
 
-                var description = new Label
+                var descriptionLabel = new Label
                 {
                     Text = $"{task["description"]}",
-                    AutoSize = true
+                    AutoSize = true,
+                    Dock = DockStyle.Top,
+                    Padding = new Padding(0, 0, 0, 10)
                 };
 
-                var priority = new Label
+                var priorityLabel = new Label
                 {
                     Text = $"Приоритет: {task["priority"]}",
-                    AutoSize = true
+                    AutoSize = true,
+                    Font = new Font("Arial", 10, FontStyle.Regular),
+                    Dock = DockStyle.Bottom,
+                    Padding = new Padding(0, 0, 0, 10)
                 };
 
-                var status = new Label
+                var statusLabel = new Label
                 {
                     Text = $"Статус: {task["status"]}",
-                    AutoSize = true
+                    AutoSize = true,
+                    Font = new Font("Arial", 10, FontStyle.Regular),
+                    Dock = DockStyle.Bottom
                 };
 
-                container.Controls.Add(title);
-                container.Controls.Add(description);
-                container.Controls.Add(priority);
-                container.Controls.Add(status);
+                taskInfo.Controls.Add(titleLabel);
+                taskInfo.Controls.Add(descriptionLabel);
+                taskInfo.Controls.Add(priorityLabel);
+                taskInfo.Controls.Add(statusLabel);
 
                 if (allowStatusChange)
                 {
@@ -115,10 +116,12 @@ namespace TaskManage
                         var button = new Button
                         {
                             Text = newStatus,
-                            Width = card.Width - 40,
+                            Width = card.Width - 35,
                             Height = 35,
                             Tag = newStatus,
-                            Margin = new Padding(3)
+                            Margin = new Padding(3),
+                            BackColor = Color.LightGray,
+                            FlatStyle = FlatStyle.Flat
                         };
 
                         button.Click += (s, e) =>
@@ -140,14 +143,19 @@ namespace TaskManage
                             }
                         };
 
-                        container.Controls.Add(button);
+                        taskInfo.Controls.Add(button);
                     }
                 }
 
-                card.Controls.Add(container);
+                card.Controls.Add(taskInfo);
                 panel.Controls.Add(card);
             }
         }
 
+        private void materialButton1_Click(object sender, EventArgs e)
+        {
+            LoadTasksInProgress(); 
+            LoadCompletedTasks();
+        }
     }
 }
