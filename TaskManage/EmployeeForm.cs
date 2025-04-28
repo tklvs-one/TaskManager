@@ -199,7 +199,7 @@ namespace TaskManage
             {
                 DisplayTasks(filteredTasks, flowLayoutPanelCompleted, false);
             }
-            else if(filteredTasks.Count == 0)
+            else
             {
                 MessageBox.Show("Не удалось загрузить задачи с применёнными фильтрами.");
             }
