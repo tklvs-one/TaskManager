@@ -315,5 +315,61 @@ namespace DataBaseLibrary
         }
 
 
+        public static List<Dictionary<string, object>> GetFilteredTasksByAssignee(int assigneeId, string priority = null, string status = null)
+        {
+            try
+            {
+                string query = "SELECT * FROM tasks WHERE assignee_id = @assigneeId";
+
+                if (!string.IsNullOrEmpty(priority))
+                {
+                    query += " AND priority = @priority";
+                }
+
+                if (!string.IsNullOrEmpty(status))
+                {
+                    query += " AND status = @status";
+                }
+
+                query += " ORDER BY id DESC"; // Сначала новые задачи
+
+                using (var conn = new NpgsqlConnection(connectionString))
+                {
+                    conn.Open();
+                    using (var cmd = new NpgsqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("assigneeId", assigneeId);
+
+                        if (!string.IsNullOrEmpty(priority))
+                            cmd.Parameters.AddWithValue("priority", priority);
+
+                        if (!string.IsNullOrEmpty(status))
+                            cmd.Parameters.AddWithValue("status", status);
+
+                        var result = new List<Dictionary<string, object>>();
+                        using (var reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                var row = new Dictionary<string, object>();
+                                for (int i = 0; i < reader.FieldCount; i++)
+                                {
+                                    row[reader.GetName(i)] = reader.GetValue(i);
+                                }
+                                result.Add(row);
+                            }
+                        }
+                        return result;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Ошибка при фильтрации задач подчинённого: " + ex.Message);
+                return null;
+            }
+        }
+
+
     }
 }

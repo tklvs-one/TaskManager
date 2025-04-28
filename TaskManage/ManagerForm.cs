@@ -105,6 +105,9 @@ namespace TaskManage
 
             // Получаем все задачи, выданные текущим менеджером
             var tasks = DataBaseService.GetFilteredTasksByCreator(_user.Id, priorityCondition, statusCondition, assigneeSId);
+            tasks = tasks
+                .OrderByDescending(task => Convert.ToInt32(task["id"]))
+                .ToList();
 
             if (tasks != null && tasks.Count > 0)
             {

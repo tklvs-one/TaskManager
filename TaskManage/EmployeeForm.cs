@@ -28,6 +28,9 @@ namespace TaskManage
             skinManager.AddFormToManage(this);
             skinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             skinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+            cmbPriorityFilter.SelectedIndex = -1;
+            cmbStatusFilter.SelectedIndex = -1;
+            cmbPriorityNotMade.SelectedIndex= -1;
 
             LoadCompletedTasks();
             LoadTasksInProgress(); 
@@ -48,6 +51,10 @@ namespace TaskManage
         private void DisplayTasks(List<Dictionary<string, object>> tasks, FlowLayoutPanel panel, bool allowStatusChange)
         {
             panel.Controls.Clear();
+
+            tasks = tasks
+                .OrderByDescending(task => Convert.ToInt32(task["id"]))
+                .ToList();
 
             foreach (var task in tasks)
             {
@@ -172,7 +179,70 @@ namespace TaskManage
         private void materialButton1_Click(object sender, EventArgs e)
         {
             LoadTasksInProgress(); 
+        }
+
+
+
+        private void flowLayoutPanelCompleted_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void ApplyFilters_Click(object sender, EventArgs e)
+        {
+            string selectedPriority = cmbPriorityFilter.SelectedItem?.ToString();
+            string selectedStatus = cmbStatusFilter.SelectedItem?.ToString();
+
+            var filteredTasks = DataBaseService.GetFilteredTasksByAssignee(_user.Id, selectedPriority, selectedStatus);
+
+            if (filteredTasks != null)
+            {
+                DisplayTasks(filteredTasks, flowLayoutPanelCompleted, false);
+            }
+            else if(filteredTasks.Count == 0)
+            {
+                MessageBox.Show("Не удалось загрузить задачи с применёнными фильтрами.");
+            }
+        }
+
+        private void DisableFilters_Click(object sender, EventArgs e)
+        {
             LoadCompletedTasks();
+            LoadTasksInProgress();
+
+            cmbPriorityFilter.SelectedIndex = -1;
+            cmbStatusFilter.SelectedIndex = -1;
+
+            cmbPriorityFilter.Refresh();
+            cmbStatusFilter.Refresh();
+        }
+
+        private void materialButton2_Click(object sender, EventArgs e)
+        {
+            LoadCompletedTasks();
+        }
+
+        private void ApplyFiltersInWork_Click(object sender, EventArgs e)
+        {
+            string selectedPriority = cmbPriorityNotMade.SelectedItem?.ToString();
+
+            var inProgressFilteredTasks = DataBaseService.GetFilteredTasksByAssignee(_user.Id, selectedPriority, "В работе");
+
+            if (inProgressFilteredTasks == null || inProgressFilteredTasks.Count == 0)
+            {
+                MessageBox.Show("Не найдено задач с указанными параметрами.");
+                return;
+            }
+
+            DisplayTasks(inProgressFilteredTasks, flowLayoutPanelInProgress, true);
+        }
+
+        private void DisableFiltersNoMade_Click(object sender, EventArgs e)
+        {
+            LoadTasksInProgress();
+
+            cmbPriorityNotMade.SelectedIndex = -1;
+            cmbPriorityNotMade.Refresh();
         }
     }
 }
