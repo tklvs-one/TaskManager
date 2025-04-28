@@ -56,9 +56,9 @@ namespace TaskManage
                     Width = panel.Width - 75,
                     Height = 300,
                     Padding = new Padding(10),
-                    BackColor = Color.White,
                     Margin = new Padding(10)
                 };
+
 
                 var taskInfo = new FlowLayoutPanel
                 {
@@ -110,19 +110,32 @@ namespace TaskManage
                 if (allowStatusChange)
                 {
                     var statuses = new[] { "Выполнено", "Провалено", "Отказано" };
+                    var imageIndexes = new[] { 1, 2, 3 }; // Индексы иконок в imageList1
 
-                    foreach (var newStatus in statuses)
+                    var buttonPanel = new Panel
+                    {
+                        Width = 60,   // Ширина под три кнопки
+                        Height = 180, // Примерная высота
+                        Anchor = AnchorStyles.Top | AnchorStyles.Right,
+                        Location = new Point(card.Width - 70, (card.Height - 150) / 2), // Правый угол и центр по высоте
+                        BackColor = Color.Transparent
+                    };
+
+                    for (int i = 0; i < statuses.Length; i++)
                     {
                         var button = new Button
                         {
-                            Text = newStatus,
-                            Width = card.Width - 35,
-                            Height = 35,
-                            Tag = newStatus,
-                            Margin = new Padding(3),
-                            BackColor = Color.LightGray,
-                            FlatStyle = FlatStyle.Flat
+                            Width = 50,
+                            Height = 50,
+                            Tag = statuses[i],
+                            ImageList = imageList1,
+                            ImageIndex = imageIndexes[i],
+                            FlatStyle = FlatStyle.Flat,
+                            BackColor = Color.Transparent,
+                            Location = new Point(5, i * 55) // Размещаем кнопки друг под другом
                         };
+                        button.FlatAppearance.BorderSize = 0;
+                        button.FlatAppearance.MouseOverBackColor = Color.LightGray;
 
                         button.Click += (s, e) =>
                         {
@@ -143,9 +156,13 @@ namespace TaskManage
                             }
                         };
 
-                        taskInfo.Controls.Add(button);
+                        buttonPanel.Controls.Add(button);
                     }
+
+                    card.Controls.Add(buttonPanel);
                 }
+
+
 
                 card.Controls.Add(taskInfo);
                 panel.Controls.Add(card);

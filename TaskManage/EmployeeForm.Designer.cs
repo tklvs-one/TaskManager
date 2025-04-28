@@ -32,11 +32,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeForm));
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPageTasks = new System.Windows.Forms.TabPage();
+            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
             this.flowLayoutPanelInProgress = new System.Windows.Forms.FlowLayoutPanel();
             this.tabPageCompletedTasks = new System.Windows.Forms.TabPage();
             this.flowLayoutPanelCompleted = new System.Windows.Forms.FlowLayoutPanel();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
             this.materialTabControl1.SuspendLayout();
             this.tabPageTasks.SuspendLayout();
             this.tabPageCompletedTasks.SuspendLayout();
@@ -62,51 +62,13 @@
             this.tabPageTasks.BackColor = System.Drawing.Color.White;
             this.tabPageTasks.Controls.Add(this.materialButton1);
             this.tabPageTasks.Controls.Add(this.flowLayoutPanelInProgress);
-            this.tabPageTasks.ImageIndex = 0;
+            this.tabPageTasks.ImageKey = "icons8-задания-32.png";
             this.tabPageTasks.Location = new System.Drawing.Point(4, 39);
             this.tabPageTasks.Name = "tabPageTasks";
             this.tabPageTasks.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageTasks.Size = new System.Drawing.Size(841, 466);
             this.tabPageTasks.TabIndex = 0;
             this.tabPageTasks.Text = "Задачи";
-            // 
-            // flowLayoutPanelInProgress
-            // 
-            this.flowLayoutPanelInProgress.AutoScroll = true;
-            this.flowLayoutPanelInProgress.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanelInProgress.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanelInProgress.Name = "flowLayoutPanelInProgress";
-            this.flowLayoutPanelInProgress.Size = new System.Drawing.Size(838, 406);
-            this.flowLayoutPanelInProgress.TabIndex = 0;
-            this.flowLayoutPanelInProgress.WrapContents = false;
-            // 
-            // tabPageCompletedTasks
-            // 
-            this.tabPageCompletedTasks.Controls.Add(this.flowLayoutPanelCompleted);
-            this.tabPageCompletedTasks.Location = new System.Drawing.Point(4, 39);
-            this.tabPageCompletedTasks.Name = "tabPageCompletedTasks";
-            this.tabPageCompletedTasks.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageCompletedTasks.Size = new System.Drawing.Size(841, 466);
-            this.tabPageCompletedTasks.TabIndex = 1;
-            this.tabPageCompletedTasks.Text = "Выполнено";
-            this.tabPageCompletedTasks.UseVisualStyleBackColor = true;
-            // 
-            // flowLayoutPanelCompleted
-            // 
-            this.flowLayoutPanelCompleted.AutoScroll = true;
-            this.flowLayoutPanelCompleted.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanelCompleted.Location = new System.Drawing.Point(-1, 59);
-            this.flowLayoutPanelCompleted.Name = "flowLayoutPanelCompleted";
-            this.flowLayoutPanelCompleted.Size = new System.Drawing.Size(842, 358);
-            this.flowLayoutPanelCompleted.TabIndex = 0;
-            this.flowLayoutPanelCompleted.WrapContents = false;
-            // 
-            // imageList1
-            // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "icons8-задания-32.png");
             // 
             // materialButton1
             // 
@@ -128,10 +90,54 @@
             this.materialButton1.UseVisualStyleBackColor = true;
             this.materialButton1.Click += new System.EventHandler(this.materialButton1_Click);
             // 
+            // flowLayoutPanelInProgress
+            // 
+            this.flowLayoutPanelInProgress.AutoScroll = true;
+            this.flowLayoutPanelInProgress.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanelInProgress.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanelInProgress.Name = "flowLayoutPanelInProgress";
+            this.flowLayoutPanelInProgress.Size = new System.Drawing.Size(838, 406);
+            this.flowLayoutPanelInProgress.TabIndex = 0;
+            this.flowLayoutPanelInProgress.WrapContents = false;
+            // 
+            // tabPageCompletedTasks
+            // 
+            this.tabPageCompletedTasks.BackColor = System.Drawing.Color.White;
+            this.tabPageCompletedTasks.Controls.Add(this.flowLayoutPanelCompleted);
+            this.tabPageCompletedTasks.ImageKey = "icons8-галочка-32.png";
+            this.tabPageCompletedTasks.Location = new System.Drawing.Point(4, 39);
+            this.tabPageCompletedTasks.Name = "tabPageCompletedTasks";
+            this.tabPageCompletedTasks.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageCompletedTasks.Size = new System.Drawing.Size(841, 466);
+            this.tabPageCompletedTasks.TabIndex = 1;
+            this.tabPageCompletedTasks.Text = "Выполнено";
+            // 
+            // flowLayoutPanelCompleted
+            // 
+            this.flowLayoutPanelCompleted.AutoScroll = true;
+            this.flowLayoutPanelCompleted.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanelCompleted.Location = new System.Drawing.Point(-1, 59);
+            this.flowLayoutPanelCompleted.Name = "flowLayoutPanelCompleted";
+            this.flowLayoutPanelCompleted.Size = new System.Drawing.Size(842, 358);
+            this.flowLayoutPanelCompleted.TabIndex = 0;
+            this.flowLayoutPanelCompleted.WrapContents = false;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.White;
+            this.imageList1.Images.SetKeyName(0, "icons8-задания-32.png");
+            this.imageList1.Images.SetKeyName(1, "icons8-галочка-32.png");
+            this.imageList1.Images.SetKeyName(2, "closeIcon.png");
+            this.imageList1.Images.SetKeyName(3, "icons8-восклицательный-знак-32.png");
+            this.imageList1.Images.SetKeyName(4, "icons8-поиск-32.png");
+            // 
             // EmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CausesValidation = false;
             this.ClientSize = new System.Drawing.Size(855, 576);
             this.Controls.Add(this.materialTabControl1);
             this.DrawerAutoShow = true;
