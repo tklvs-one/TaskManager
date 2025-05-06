@@ -135,6 +135,7 @@
             this.btnRegister.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnRegister.UseAccentColor = false;
             this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click_1);
             // 
             // RegistrationForm
             // 

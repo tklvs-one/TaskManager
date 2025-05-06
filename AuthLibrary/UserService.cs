@@ -31,6 +31,14 @@ namespace AuthLibrary
         {
             try
             {
+                // Валидация логина и пароля
+                if (!UserValidator.IsLoginValid(login) || !UserValidator.IsPasswordValid(password))
+                    return false;
+
+                // Обычный сотрудник должен быть привязан к менеджеру
+                if (!isManager && managerId == null)
+                    return false;
+
                 string hashedPassword = HashPassword(password); // Хешируем пароль перед сохранением
 
                 var columnValues = new Dictionary<string, object>
@@ -76,7 +84,6 @@ namespace AuthLibrary
             try
             {
                 string hashedPassword = HashPassword(password);
-                Console.WriteLine("Введенный пароль (хеш): " + hashedPassword);  // Логируем хеш пароля
 
                 // Получаем пользователя по логину
                 var result = DataBaseService.Select("Users", new List<string> { "id", "login", "is_manager", "manager", "password" }, "login", login);
@@ -84,7 +91,6 @@ namespace AuthLibrary
                 {
                     var userRow = result[0];
                     string storedPassword = (string)userRow["password"];
-                    Console.WriteLine("Пароль из базы данных: " + storedPassword);  // Логируем пароль из базы
 
                     if (storedPassword == hashedPassword)
                     {

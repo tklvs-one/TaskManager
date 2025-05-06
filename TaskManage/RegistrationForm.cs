@@ -37,12 +37,31 @@ namespace TaskManage
             }
         }
 
-        private void btnRegister_Click(object sender, EventArgs e)
+
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            // Создаем экземпляр формы авторизации
+            LoginForm loginForm = new LoginForm();
+
+            // Открываем форму авторизации
+            loginForm.Show();
+
+            // Закрываем текущую форму, если это необходимо
+            this.Hide();
+        }
+
+        private void btnRegister_Click_1(object sender, EventArgs e)
         {
             string login = txtLogin.Text;
             string password = txtPassword.Text;
             string managerLogin = txtManagerLogin.Text;
 
+            if (string.IsNullOrWhiteSpace(login) || string.IsNullOrWhiteSpace(password))
+            {
+                MessageBox.Show("Логин и пароль не должны быть пустыми.");
+                return;
+            }
             // Валидация
             if (!UserValidator.IsLoginValid(login) || !UserValidator.IsPasswordValid(password))
             {
@@ -74,18 +93,6 @@ namespace TaskManage
             {
                 MessageBox.Show("Произошла ошибка при регистрации.");
             }
-        }
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            // Создаем экземпляр формы авторизации
-            LoginForm loginForm = new LoginForm();
-
-            // Открываем форму авторизации
-            loginForm.Show();
-
-            // Закрываем текущую форму, если это необходимо
-            this.Hide();
         }
     }
 }
