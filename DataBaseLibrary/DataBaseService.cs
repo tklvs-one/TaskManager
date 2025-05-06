@@ -5,7 +5,7 @@ namespace DataBaseLibrary
     public static class DataBaseService
     {
         // Строка подключения к базе данных
-        private static string connectionString = "Host=localhost;Username=postgres;Password=123;Database=task_manage_tests";
+        public static string connectionString = "Host=localhost;Username=postgres;Password=123;Database=task_manage_tests";
 
         // Универсальный метод для добавления данных в таблицу
         public static bool Add(string tableName, Dictionary<string, object> columnValues)
