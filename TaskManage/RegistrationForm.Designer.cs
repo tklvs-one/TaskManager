@@ -116,6 +116,7 @@
             this.chkIsManager.TabIndex = 12;
             this.chkIsManager.Text = "Я руководитель";
             this.chkIsManager.UseVisualStyleBackColor = true;
+            this.chkIsManager.CheckedChanged += new System.EventHandler(this.chkIsManager_CheckedChanged_1);
             // 
             // btnRegister
             // 

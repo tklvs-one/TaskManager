@@ -25,17 +25,6 @@ namespace TaskManage
             txtManagerLogin.Visible = false;
         }
 
-        private void chkIsManager_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chkIsManager.Checked)
-            {
-                txtManagerLogin.Visible = false;
-            }
-            else
-            {
-                txtManagerLogin.Visible = true;
-            }
-        }
 
 
 
@@ -92,6 +81,18 @@ namespace TaskManage
             else
             {
                 MessageBox.Show("Произошла ошибка при регистрации.");
+            }
+        }
+
+        private void chkIsManager_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (chkIsManager.Checked)
+            {
+                txtManagerLogin.Visible = false;
+            }
+            else
+            {
+                txtManagerLogin.Visible = true;
             }
         }
     }
