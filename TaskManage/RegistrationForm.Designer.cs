@@ -28,85 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtLogin = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.txtManagerLogin = new System.Windows.Forms.TextBox();
-            this.btnRegister = new System.Windows.Forms.Button();
-            this.chkIsManager = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.txtLogin = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtPassword = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtManagerLogin = new MaterialSkin.Controls.MaterialTextBox();
+            this.chkIsManager = new MaterialSkin.Controls.MaterialCheckbox();
+            this.btnRegister = new MaterialSkin.Controls.MaterialButton();
             this.SuspendLayout();
-            // 
-            // txtLogin
-            // 
-            this.txtLogin.Location = new System.Drawing.Point(88, 73);
-            this.txtLogin.Name = "txtLogin";
-            this.txtLogin.Size = new System.Drawing.Size(204, 27);
-            this.txtLogin.TabIndex = 0;
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Location = new System.Drawing.Point(88, 140);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(204, 27);
-            this.txtPassword.TabIndex = 1;
-            // 
-            // txtManagerLogin
-            // 
-            this.txtManagerLogin.Location = new System.Drawing.Point(88, 211);
-            this.txtManagerLogin.Name = "txtManagerLogin";
-            this.txtManagerLogin.Size = new System.Drawing.Size(204, 27);
-            this.txtManagerLogin.TabIndex = 2;
-            // 
-            // btnRegister
-            // 
-            this.btnRegister.Location = new System.Drawing.Point(88, 380);
-            this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(204, 29);
-            this.btnRegister.TabIndex = 3;
-            this.btnRegister.Text = "Зарегистрироваться";
-            this.btnRegister.UseVisualStyleBackColor = true;
-            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
-            // 
-            // chkIsManager
-            // 
-            this.chkIsManager.AutoSize = true;
-            this.chkIsManager.Location = new System.Drawing.Point(121, 415);
-            this.chkIsManager.Name = "chkIsManager";
-            this.chkIsManager.Size = new System.Drawing.Size(140, 24);
-            this.chkIsManager.TabIndex = 4;
-            this.chkIsManager.Text = "Я руководитель";
-            this.chkIsManager.UseVisualStyleBackColor = true;
-            this.chkIsManager.CheckedChanged += new System.EventHandler(this.chkIsManager_CheckedChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(88, 50);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 20);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Имя пользователя";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(88, 117);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 20);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Пароль";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(88, 188);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(152, 20);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Логин руководителя";
             // 
             // linkLabel1
             // 
@@ -119,37 +47,120 @@
             this.linkLabel1.Text = "Уже есть аккаунт? Войти";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
+            // txtLogin
+            // 
+            this.txtLogin.AnimateReadOnly = false;
+            this.txtLogin.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLogin.Depth = 0;
+            this.txtLogin.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtLogin.Hint = "Введите имя пользователя";
+            this.txtLogin.LeadingIcon = null;
+            this.txtLogin.Location = new System.Drawing.Point(66, 125);
+            this.txtLogin.MaxLength = 50;
+            this.txtLogin.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtLogin.Multiline = false;
+            this.txtLogin.Name = "txtLogin";
+            this.txtLogin.Size = new System.Drawing.Size(258, 50);
+            this.txtLogin.TabIndex = 9;
+            this.txtLogin.Text = "";
+            this.txtLogin.TrailingIcon = null;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.AnimateReadOnly = false;
+            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPassword.Depth = 0;
+            this.txtPassword.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPassword.Hint = "Введите пароль";
+            this.txtPassword.LeadingIcon = null;
+            this.txtPassword.Location = new System.Drawing.Point(66, 189);
+            this.txtPassword.MaxLength = 50;
+            this.txtPassword.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtPassword.Multiline = false;
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(258, 50);
+            this.txtPassword.TabIndex = 10;
+            this.txtPassword.Text = "";
+            this.txtPassword.TrailingIcon = null;
+            // 
+            // txtManagerLogin
+            // 
+            this.txtManagerLogin.AnimateReadOnly = false;
+            this.txtManagerLogin.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtManagerLogin.Depth = 0;
+            this.txtManagerLogin.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtManagerLogin.Hint = "Логин начальника";
+            this.txtManagerLogin.LeadingIcon = null;
+            this.txtManagerLogin.Location = new System.Drawing.Point(66, 255);
+            this.txtManagerLogin.MaxLength = 50;
+            this.txtManagerLogin.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtManagerLogin.Multiline = false;
+            this.txtManagerLogin.Name = "txtManagerLogin";
+            this.txtManagerLogin.Size = new System.Drawing.Size(258, 50);
+            this.txtManagerLogin.TabIndex = 11;
+            this.txtManagerLogin.Text = "";
+            this.txtManagerLogin.TrailingIcon = null;
+            // 
+            // chkIsManager
+            // 
+            this.chkIsManager.AutoSize = true;
+            this.chkIsManager.Depth = 0;
+            this.chkIsManager.Location = new System.Drawing.Point(110, 412);
+            this.chkIsManager.Margin = new System.Windows.Forms.Padding(0);
+            this.chkIsManager.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chkIsManager.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chkIsManager.Name = "chkIsManager";
+            this.chkIsManager.ReadOnly = false;
+            this.chkIsManager.Ripple = true;
+            this.chkIsManager.Size = new System.Drawing.Size(155, 37);
+            this.chkIsManager.TabIndex = 12;
+            this.chkIsManager.Text = "Я руководитель";
+            this.chkIsManager.UseVisualStyleBackColor = true;
+            // 
+            // btnRegister
+            // 
+            this.btnRegister.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnRegister.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnRegister.Depth = 0;
+            this.btnRegister.HighEmphasis = true;
+            this.btnRegister.Icon = null;
+            this.btnRegister.Location = new System.Drawing.Point(97, 357);
+            this.btnRegister.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnRegister.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnRegister.Size = new System.Drawing.Size(191, 36);
+            this.btnRegister.TabIndex = 13;
+            this.btnRegister.Text = "Зарегистрироваться";
+            this.btnRegister.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnRegister.UseAccentColor = false;
+            this.btnRegister.UseVisualStyleBackColor = true;
+            // 
             // RegistrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(382, 503);
-            this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.chkIsManager);
             this.Controls.Add(this.btnRegister);
+            this.Controls.Add(this.chkIsManager);
             this.Controls.Add(this.txtManagerLogin);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtLogin);
+            this.Controls.Add(this.linkLabel1);
             this.Name = "RegistrationForm";
-            this.Text = "RegistrationForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Регистрация";
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private TextBox txtLogin;
-        private TextBox txtPassword;
-        private TextBox txtManagerLogin;
-        private Button btnRegister;
-        private CheckBox chkIsManager;
-        private Label label1;
-        private Label label2;
-        private Label label3;
         private LinkLabel linkLabel1;
+        private MaterialSkin.Controls.MaterialTextBox txtLogin;
+        private MaterialSkin.Controls.MaterialTextBox txtPassword;
+        private MaterialSkin.Controls.MaterialTextBox txtManagerLogin;
+        private MaterialSkin.Controls.MaterialCheckbox chkIsManager;
+        private MaterialSkin.Controls.MaterialButton btnRegister;
     }
 }

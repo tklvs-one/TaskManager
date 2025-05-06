@@ -160,7 +160,8 @@
             this.Controls.Add(this.txtLogin);
             this.Controls.Add(this.linkLabel1);
             this.Name = "LoginForm";
-            this.Text = "LoginForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Авторизация";
             this.ResumeLayout(false);
             this.PerformLayout();
 

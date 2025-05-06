@@ -8,10 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AuthLibrary;
+using MaterialSkin.Controls;
+
 
 namespace TaskManage
 {
-    public partial class RegistrationForm : Form
+    public partial class RegistrationForm : MaterialForm
     {
         public RegistrationForm()
         {
